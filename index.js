@@ -1,21 +1,17 @@
-import express from "express";
+
+const express = require("express");
+const customersRouter = require("./router/customer.router");
+// const UserRouter = require("./router/user");
 
 const app = express();
 
 app.use(express.json());
 
-const port = 3000;
+const port = 8080;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use("/customers", customersRouter);
 
-app.post("/addArticle", (request, response) => {
-  const { title } = request.body;
-  console.log(title);
-  
-  response.send(`Product successfully added ${title}`);
-});
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`server running at a http://localhost:${port}/`);
 });
+
