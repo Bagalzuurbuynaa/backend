@@ -8,7 +8,7 @@ PGUSER = decodeURIComponent(PGUSER);
 PGDATABASE = decodeURIComponent(PGDATABASE);
 
 export const sql = postgres({
-  host: PGHOST,git 
+  host: PGHOST,
   database: PGDATABASE,
   username: PGUSER,
   password: PGPASSWORD,
